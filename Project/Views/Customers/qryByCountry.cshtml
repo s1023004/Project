@@ -1,0 +1,47 @@
+﻿@model System.Collections.Generic.List<Project.Models.Customers>
+@{
+    List<Customers> model = this.Model;
+    ViewData["Title"] = "客戶查詢-By國家別";
+    var items = this.ViewData["items"] as List<SelectListItem>;
+}
+
+
+@*表單頁面-使用HtmlHelper*@
+<fieldset>
+    <legend>客戶資料查詢</legend>
+    @using (Html.BeginForm())
+    {
+        @Html.Label("country","國家別")
+        @Html.DropDownList("country",items)
+        <input type="submit" value="查詢"/>
+    }
+</fieldset>
+@if (Model != null)
+{
+    <fieldset></fieldset>
+    <legend>客戶清單</legend>
+    <table>
+        <thead>
+            <tr>
+                <td>客戶編號</td>
+                <td>公司行號</td>
+                <td>聯絡地址</td>
+                <td>連絡電話</td>
+                <td>國家別</td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var item in Model){
+            <tr>
+                <td>@item.customerId</td>
+                <td>@item.companyName</td>
+                <td>@item.address</td>
+                <td>@item.phone</td>
+                <td>@item.country</td>
+            </tr>
+            }
+        </tbody>
+    </table>
+
+}
+

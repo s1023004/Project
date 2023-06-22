@@ -1,0 +1,33 @@
+﻿@model Project.Models.Customers
+@{
+    ViewData["Title"] = "客戶資料新增作業";
+}
+
+<fieldset>
+    <legend>客戶資料維護</legend>
+    @using (Html.BeginForm()){
+        <div>
+            @Html.Label("customerId","客戶編號")
+            @Html.TextBoxFor(c=>c.customerId)
+        </div>
+        <div>
+            @Html.Label("companyName","公司行號")
+            @Html.TextBoxFor(c=>c.companyName)
+        </div>
+        <div>
+            @Html.Label("address","聯絡地址")
+            @Html.TextBoxFor(c=>c.address)
+        </div>
+        <div>
+            @Html.Label("phone","聯絡電話")
+            @Html.TextBoxFor(c=>c.phone)
+        </div>
+        <div>
+            @Html.Label("country","國家別")
+            @Html.TextBoxFor(c=>c.country)
+        </div>
+        <input type="submit" value="新增"/>
+    }
+    <h3>@ViewBag.Message</h3>
+</fieldset>
+

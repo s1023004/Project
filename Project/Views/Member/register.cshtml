@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewData["Title"] = "註冊作業";
+}
+
+@*設計表單註冊頁面*@
+<form method="post">
+    <div>使用者名稱</div>
+    <input type="text" name="userName"/>
+    <div>密碼</div>
+    <input type="password" name="passw ord"/>
+    <div>真實姓名</div>
+    <input type="text"name="realName"/>
+    <div>EMAIL</div>
+    <input type="text" name="email"/>
+    <br />
+    <input type="submit" value="註冊"/>
+</form>
+@*設定超連結 連結到說明輔助入口 調用相關說明(透過參數傳遞)*@
+<a href="../helper/document?id=register">註冊說明</a>
